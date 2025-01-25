@@ -41,7 +41,7 @@ def upload_file_to_blob(local_file_path, blob_name):
 # Example usage
 if __name__ == "__main__":
     # Path to the local file to upload
-    local_file_path = "C:/Users/janih/ainews/test.txt"  # Replace with your local file path
+    local_file_path = "./test.txt"  # Replace with your local file path
 
     # Name of the blob in Azure Storage
     blob_name = os.path.basename(local_file_path)  # Use the file name as the blob name
