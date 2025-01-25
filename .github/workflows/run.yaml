@@ -17,11 +17,7 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v3
 
-    - name: Run script with environment variables
-      env:
-        AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-      run: python upload.py
-
+    
     # Step 2: Set up Python
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -35,6 +31,9 @@ jobs:
         pip install -r requirements.txt
 
     # Step 4: Run your Python script
-    - name: Run script
-      run: |
-        python upload.py
+   
+    
+    - name: Run script with environment variables
+      env:
+        AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+      run: python upload.py
